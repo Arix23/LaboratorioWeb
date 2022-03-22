@@ -1,0 +1,25 @@
+h2{
+    text-align: center;
+}
+body {
+    background-color: black;
+    color: white;
+}
+
+img{
+    width: 300px;
+}
+p {
+    font-size: 1.8em;
+    text-align: center;
+}
+#result {
+    width: 98%;
+    margin-left: 1%;
+}
+#Nesbuttons{
+    margin-top: 5%;
+}
+#bienvenida{
+    margin-bottom: 10%;
+}

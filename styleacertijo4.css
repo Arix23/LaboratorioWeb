@@ -1,0 +1,22 @@
+h2{
+    text-align: center;
+}
+body {
+    background-image: url("/assets/riddlemethis-01.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 25%;
+    color: black;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+p {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#submitdiv{
+    margin-top: 5%;
+}
+#bienvenida{
+    margin-bottom: 10%;
+}
