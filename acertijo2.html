@@ -23,16 +23,11 @@
             </div>
         </div>
         <div class="d-flex p-2 row align-items-center justify-content-center">
-            <input class="form-control" type="text" placeholder="Respuesta">
-            <button type="button" id="submit_button" class="btn btn-dark">Submit</button>
+            <input class="form-control" type="text" placeholder="Respuesta" id="submit-input">
+            <button type="button" id="submit-button" class="btn btn-dark">Submit</button>
         </div>
     </div>
 </body>
-<script>
-    document.getElementById("submit_button").onclick = function () {
-        location.href = "acertijo3.html";
-    };
-</script>
 <!-- The script tag needs to have the module type -->
 <script type="module">
 	// The source code can be in other file and use the src attribute in the tag
@@ -40,15 +35,21 @@
 
 	import init, {check} from "./pkg/puzzle_checker.js";
 
-	document.querySelector("#submit_button").addEventListener('click', () => {
-		let input = document.querySelector("#submit_input")
+	document.querySelector("#submit-button").addEventListener('click', () => {
+		let input = document.querySelector("#submit-input")
 		if (input.value != "") {
 			init()
 				.then(() => {
-					check(input.value)
+                    if(check(1, input.value)) {
+                        location.href = "acertijo3.html";
+                    } else {
+                        alert("Wrong answer, try again.")
+                    }
+
 				});
 		} else {
 			// Handle no input
+            
 		}
 	})
 </script>

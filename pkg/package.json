@@ -1,0 +1,12 @@
+{
+  "name": "puzzle-checker",
+  "version": "0.1.0",
+  "files": [
+    "puzzle_checker_bg.wasm",
+    "puzzle_checker.js",
+    "puzzle_checker.d.ts"
+  ],
+  "module": "puzzle_checker.js",
+  "types": "puzzle_checker.d.ts",
+  "sideEffects": false
+}

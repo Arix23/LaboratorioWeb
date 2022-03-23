@@ -26,16 +26,15 @@
         </div>
         <div class ="row" id ="Nesbuttons">
             <div class="btn-group" role="group" aria-label="NES Buttons">
-                <button type="button" class="btn btn-dark" onclick="button_Up()">Up</button>
-                <button type="button" class="btn btn-dark"onclick="button_Right()">Right</button>
-                <button type="button" class="btn btn-dark"onclick="button_Down()">Down</button>
-                <button type="button" class="btn btn-dark"onclick="button_Left()">Left</button>
-                <button type="button" class="btn btn-danger"onclick="button_B()">B</button>
-                <button type="button" class="btn btn-success"onclick="button_A()">A</button>
-                <button type="button" class="btn btn-light"onclick="button_Select()">Select</button>
-                <a href="acertijo2.html">
-                <button type="button" id="submit_button" class="btn btn-dark">Start</button>
-                </a>
+                <button type="button" class="btn btn-dark" onclick="update_result('↑');">Up</button>
+                <button type="button" class="btn btn-dark" onclick="update_result('→')">Right</button>
+                <button type="button" class="btn btn-dark" onclick="update_result('↓');">Down</button>
+                <button type="button" class="btn btn-dark" onclick="update_result('←');">Left</button>
+                <button type="button" class="btn btn-danger" onclick="update_result('B');">B</button>
+                <button type="button" class="btn btn-success" onclick="update_result('A');">A</button>
+                <button type="button" class="btn btn-light" onclick="update_result('SELECT');">Select</button>
+                <button type="button" class="btn btn-dark" onclick="update_result('START');">Start</button>
+
             </div>
         </div>
         <div class="row">
@@ -48,26 +47,20 @@
     </div>
 </body>
 <script>
-    function button_Up() {
-        document.getElementById("result").value+= '↑';
-    }
-    function button_Down() {
-        document.getElementById("result").value+= '↓';
-    }
-    function button_Left() {
-        document.getElementById("result").value+= '←';
-    }
-    function button_Right() {
-        document.getElementById("result").value+= '→';
-    }
-    function button_A() {
-        document.getElementById("result").value+= 'A';
-    }
-    function button_B() {
-        document.getElementById("result").value+= 'B';
-    }
-    function button_Select() {
-        document.getElementById("result").value+= 'SELECT';
+
+    var clicks = 0
+
+    function update_result(val) {
+        let element = document.querySelector("#result");
+
+        if (element.value != "") {
+            element.value += " ";
+        }
+        element.value += val;
+        clicks += 1;
+
+        let event = new Event('change');
+        element.dispatchEvent(event);
     }
 </script>
 <!-- The script tag needs to have the module type -->
@@ -77,16 +70,21 @@
 
 	import init, {check} from "./pkg/puzzle_checker.js";
 
-	document.querySelector("#submit_button").addEventListener('click', () => {
-		let input = document.querySelector("#submit_input")
-		if (input.value != "") {
-			init()
-				.then(() => {
-					check(input.value)
-				});
-		} else {
-			// Handle no input
-		}
+	document.querySelector("#result").addEventListener('change', (e) => {
+		let input = document.querySelector("#result")
+        if( clicks == 11 ){
+            init()
+                .then(() => {
+                    if(check(0, input.value)) {
+                        location.href = "acertijo2.html";
+                    } else {
+                        alert("Wrong answer, try again.")
+                        clicks = 0;
+                        input.value = "";
+                    }
+                });
+        }
+
 	})
 </script>
 </html>

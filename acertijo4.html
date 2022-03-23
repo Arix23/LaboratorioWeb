@@ -19,8 +19,8 @@
         </div>
         <br>
         <div id="submitdiv" class="d-flex p-2 row align-items-center justify-content-center">
-            <input class="form-control" type="text" placeholder="Respuesta">
-            <button type="button" id="submit_button" class="btn btn-dark">Submit</button>
+            <input class="form-control" type="text" placeholder="Respuesta" id="submit-input">
+            <button type="button" id="submit-button" class="btn btn-dark">Submit</button>
         </div>
     </div>
 </body>
@@ -31,15 +31,22 @@
 
 	import init, {check} from "./pkg/puzzle_checker.js";
 
-	document.querySelector("#submit_button").addEventListener('click', () => {
-		let input = document.querySelector("#submit_input")
+    document.querySelector("#submit-button").addEventListener('click', () => {
+		let input = document.querySelector("#submit-input")
 		if (input.value != "") {
 			init()
 				.then(() => {
-					check(input.value)
+                    if(check(3, input.value)) {
+                        //location.href = "acertijo4.html";
+                        alert("Correct");
+                    } else {
+                        alert("Wrong answer, try again.")
+                    }
+
 				});
 		} else {
 			// Handle no input
+            
 		}
 	})
 </script>
