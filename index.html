@@ -47,7 +47,7 @@
     document.getElementById("submit_button").onclick = function () {
         location.href = "acertijo1.html";
         //console.log(this.form.controls['exampleInputEmail1'].value);
-        setCookie("user","Pepe",100);
+        setCookie("user",document.getElementById("exampleInputEmail1").value,100);
         setCookie("page","1",100);
         p = true;
     };
