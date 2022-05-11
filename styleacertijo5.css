@@ -1,0 +1,7 @@
+canvas{
+    position: relative;
+    border: solid 12px rgba(176,141,49,255);
+    outline: 12px solid rgba(153,120,48,255);
+    padding: 0 !important;
+}
+
