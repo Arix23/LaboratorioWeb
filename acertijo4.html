@@ -71,9 +71,9 @@
 		if (input.value != "") {
 			init()
 				.then(() => {
-                    if(check(3, input.value)) {
-                        //location.href = "acertijo4.html";
-                        alert("Correct");
+                    if(check(4, input.value)) {
+                        setCookie("page","5",100);
+                        location.href = "acertijo5.html";
                     } else {
                         alert("Wrong answer, try again.")
                     }

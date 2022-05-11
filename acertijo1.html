@@ -108,9 +108,9 @@
         if( clicks == 11 ){
             init()
                 .then(() => {
-                    if(check(0, input.value)) {
-                        location.href = "acertijo2.html";
+                    if(check(1, input.value)) {
                         setCookie("page","2",100);
+                        location.href = "acertijo2.html";
                     } else {
                         alert("Wrong answer, try again.")
                         clicks = 0;
