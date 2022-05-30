@@ -3,15 +3,16 @@
 /**
 * @param {number} index
 * @param {string} guess
-* @returns {boolean}
+* @returns {BigInt | undefined}
 */
-export function check(index: number, guess: string): boolean;
+export function check(index: number, guess: string): BigInt | undefined;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly check: (a: number, b: number, c: number) => number;
+  readonly check: (a: number, b: number, c: number, d: number) => void;
+  readonly __wbindgen_add_to_stack_pointer: (a: number) => number;
   readonly __wbindgen_malloc: (a: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number) => number;
 }
