@@ -57,6 +57,10 @@ func puzzleHandler(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "pages/acertijo8.html")
 	case "6035513258945588500":
 		http.ServeFile(w, r, "pages/acertijo9.html")
+	case "16528679900032520146":
+		http.ServeFile(w, r, "pages/acertijo10.html")
+	case "17172116830061215499":
+		http.ServeFile(w, r, "pages/acertijo11.html")
 	default:
 		http.ServeFile(w, r, "pages/index.html")
 
