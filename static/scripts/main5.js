@@ -28,7 +28,7 @@ renderer.setClearColor(0xffffff, 1)
 
 var skyGeo = new THREE.SphereGeometry(100000, 25, 25);
 var textureLoader = new THREE.TextureLoader(),
-  texture = textureLoader.load("assets/sky/sky.jpg");
+  texture = textureLoader.load("/static/assets/sky/sky.jpg");
 
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
@@ -51,7 +51,7 @@ camera.position.y = 2
 //Creación del pasto
 //Se añade la textura
 var loaderPlane = new THREE.TextureLoader();
-const texturePasto = loaderPlane.load("/assets/pasto/Pasto.jpeg");
+const texturePasto = loaderPlane.load("/static/assets/pasto/Pasto.jpeg");
 texturePasto.wrapS = THREE.RepeatWrapping;
 texturePasto.wrapT = THREE.RepeatWrapping;
 texturePasto.repeat.set(70, 70);

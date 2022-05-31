@@ -1,0 +1,21 @@
+body{
+    background-color: #0f0f0d;
+    color: #4bb339;
+    font-family: 'Courier New', Courier, monospace;
+}
+h2{
+    text-align: center;
+}
+img{
+    width: 80vh;
+    justify-content: center;
+    padding: 5%
+}
+button {
+    color: #4bb339 !important;
+    
+}
+input {
+    color: #4bb339 !important;
+    background-color: #0f0f0d !important;
+}
