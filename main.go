@@ -38,6 +38,7 @@ func puzzleHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	log.Println(level)
 	switch level {
 	case "start":
 		http.ServeFile(w, r, "pages/acertijo1.html")
