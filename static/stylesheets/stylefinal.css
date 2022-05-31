@@ -1,0 +1,29 @@
+body {
+    background-image: url("/assets/beach.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: black;
+    text-shadow: 0.5px 0 0 #fff, -0.5px 0 0 #fff, 0 0.5px 0 #fff, 0 -0.5px 0 #fff, 0.5px 0.5px #fff, -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff;
+    min-height: 100vh;
+    font-size: 2rem;
+}
+form{
+    width: 90vh;
+}
+h2{
+    font-size: 2em;
+}
+.container{
+    height: 100vh;
+}
+#bienvenida{
+    height: 20vh;
+}
+
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
