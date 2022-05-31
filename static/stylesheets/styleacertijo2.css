@@ -3,6 +3,10 @@ h2{
 }
 body {
     background-color:whitesmoke;
+    color: black;
+}
+.dalt{
+    color:#0071bc
 }
 img  {
     width: 100%;

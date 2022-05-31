@@ -51,11 +51,35 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
+    function datonicToggle(){
+        var element = document.body;
+        element.classList.toggle("dalt");
+        console.log("t");
+        if(getCookie("isDalt") == 0){
+            setCookie("isDalt", 1, 100);
+            return;
+        }else if (getCookie("isDalt" == 1)){
+            setCookie("isDalt", 0, 100);
+            return;
+        }
+    }
+
+    document.addEventListener("keydown", e => {
+        console.log(e);
+        if(e.key.toLowerCase() === "d" && e.shiftKey ){
+            e.preventDefault();
+            datonicToggle();
+        }
+    });
+
     window.onload = function(){
         var user = getCookie("user");
         document.getElementById('bienvenida').innerHTML = "Bienvenido: " + user;
         var page = getCookie("page");
         console.log(page);
+        if(getCookie("isDalt") == 1){
+            datonicToggle();
+        }
     };
 
 </script>
