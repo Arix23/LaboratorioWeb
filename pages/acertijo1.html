@@ -34,7 +34,6 @@
                 <button type="button" class="btn btn-success" onclick="update_result('A');">A</button>
                 <button type="button" class="btn btn-light" onclick="update_result('SELECT');">Select</button>
                 <button type="button" class="btn btn-dark" onclick="update_result('START');">Start</button>
-
             </div>
         </div>
         <div class="row">
@@ -46,6 +45,7 @@
         </div>
     </div>
 </body>
+
 <script>
 
     var clicks = 0
@@ -62,6 +62,7 @@
         let event = new Event('change');
         element.dispatchEvent(event);
     }
+
 
     function getCookie(cname) {
         let name = cname + "=";
@@ -88,9 +89,32 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
+    function datonicToggle(){
+        var element = document.body;
+        element.classList.toggle("dalt");
+        if(getCookie("isDalt") == 0){
+            setCookie("isDalt", 1, 100);
+            return;
+        }else if (getCookie("isDalt" == 1)){
+            setCookie("isDalt", 0, 100);
+            return;
+        }
+    }
+
+    document.addEventListener("keydown", e => {
+        console.log(e);
+        if(e.key.toLowerCase() === "d" && e.shiftKey ){
+            e.preventDefault();
+            datonicToggle();
+        }
+    });
+
     window.onload = function(){
         var user = getCookie("user");
         document.getElementById('bienvenida').innerHTML = "Bienvenido: " + user;
+        if(getCookie("isDalt") == 1){
+            datonicToggle();
+        }
         // var page = getCookie("page");
         // console.log(page);
     };

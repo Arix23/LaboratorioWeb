@@ -5,6 +5,10 @@ body {
     background-color: black;
     color: white;
 }
+.dalt{
+    background-color: #494440;
+    color: #ffffff;
+}
 
 img{
     width: 300px;
@@ -23,3 +27,4 @@ p {
 #bienvenida{
     margin-bottom: 10%;
 }
+

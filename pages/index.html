@@ -68,5 +68,10 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
+    window.onload = function(){
+        setCookie("isDalt", 0, 100);
+    };
+    
+
 </script>
 </html>
