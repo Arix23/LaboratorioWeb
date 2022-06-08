@@ -4,6 +4,8 @@
 
 import * as THREE from "https://cdn.skypack.dev/three@0.136.0";
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/GLTFLoader.js';
+import { MTLLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/MTLLoader.js';
+import { OBJLoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/OBJLoader.js';
 import { PMREMGenerator } from 'https://cdn.skypack.dev/three@0.136.0/src/extras/PMREMGenerator.js';
 import { RGBELoader } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/loaders/RGBELoader.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.136.0/examples/jsm/controls/OrbitControls.js';
@@ -23,30 +25,20 @@ const loader = new GLTFLoader();
 renderer.setClearColor(0xffffff, 1)
 
 //Import del objeto fountain
-const objLoader = new OBJLoader();
-//cargar el asset
-objloader.load(
-	// resource URL
-	'assets/courtyard/courtyard/Castle Courtyard.obj',
-	// called when resource is loaded
-	function ( object ) {
-
-		scene.add( object );
-
-	},
-	// called when loading is in progresses
-	function ( xhr ) {
-
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-	},
-	// called when loading has errors
-	function ( error ) {
-
-		console.log( 'An error happened' );
-
-	}
-);
+var mtlLoader = new MTLLoader();
+mtlLoader.setPath('assets/fountain/courtyard/courtyard/');
+mtlLoader.load('Castle Courtyard.mtl', function(materials) {
+  materials.side = THREE.DoubleSide;
+  materials.preload();
+  var objLoader = new OBJLoader();
+  objLoader.setMaterials(materials);
+  objLoader.setPath('assets/fountain/courtyard/courtyard/');
+  objLoader.load('Castle Courtyard.obj', function(object) {
+    object.position.y=1
+    object.scale.set(5,5,5)
+    scene.add(object);
+  });
+});
 
 //Creación del domo de cielo, para esto creamos una geometría esférica
 // y añadimos nuestra textura de cielo
