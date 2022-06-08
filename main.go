@@ -66,6 +66,8 @@ func puzzleHandler(w http.ResponseWriter, r *http.Request) {
 	case "16528679900032520146":
 		http.ServeFile(w, r, "pages/acertijo10.html")
 	case "13297311963775205858":
+		http.ServeFile(w, r, "pages/acertijo11.html")
+	case "5279972334124644753":
 		http.ServeFile(w, r, "pages/final.html")
 	default:
 		http.ServeFile(w, r, "pages/index.html")
@@ -84,6 +86,6 @@ func swHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
 	w.Header().Set("Pragma", "no-cache")
 	w.Header().Set("Expires", "0")
-	
+
 	http.ServeFile(w, r, "static/scripts/SW.js")
 }
