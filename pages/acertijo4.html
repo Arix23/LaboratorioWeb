@@ -65,11 +65,19 @@
     }
 
     document.addEventListener("keydown", e => {
-        console.log(e);
+        //console.log(e);
         if(e.key.toLowerCase() === "d" && e.shiftKey ){
             e.preventDefault();
             datonicToggle();
             window.reload();
+        }
+    });
+
+    document.addEventListener("keypress", e => {
+        //console.log(e);
+        if(e.key === "Enter"){
+            e.preventDefault();
+            document.getElementById("submit_button").click();
         }
     });
 

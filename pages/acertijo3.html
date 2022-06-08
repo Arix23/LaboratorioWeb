@@ -51,6 +51,14 @@
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
+    document.addEventListener("keypress", e => {
+        console.log(e);
+        if(e.key === "Enter"){
+            e.preventDefault();
+            document.getElementById("submit_button").click();
+        }
+    });
+    
     window.onload = function(){
         var user = getCookie("user");
         document.getElementById('bienvenida').innerHTML = "Bienvenido: " + user;

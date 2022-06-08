@@ -167,6 +167,15 @@
         var page = getCookie("page");
         console.log(page);
     };
+
+    document.addEventListener("keypress", e => {
+        //console.log(e);
+        if(e.key === "Enter"){
+            e.preventDefault();
+            document.getElementById("submit_button").click();
+        }
+    });
+    
 </script>
 <!-- <script>
     document.getElementById("submit-button").onclick = function () {
