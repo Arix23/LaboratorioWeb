@@ -10,7 +10,7 @@ this.addEventListener('install', event => {
   event.waitUntil(
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
-          '/styleoffline.css',
+          '/stylesheets/styleoffline.css',
           '/assets/offline.png',
           offlineUrl
       ]);
