@@ -10,7 +10,12 @@ body {
     text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 .dalt{
-    color:#fff;
+    background-image: url("/assets/riddleDalt.jpg");
+    color: black;
+    text-shadow: 0.5px 0 0 black, -0.5px 0 0 black, 0 0.5px 0 black, 0 -0.5px 0 black, 0.5px 0.5px black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 p {
     font-size: 2.5em;
