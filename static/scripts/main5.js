@@ -22,6 +22,31 @@ document.body.appendChild(renderer.domElement);
 const loader = new GLTFLoader();
 renderer.setClearColor(0xffffff, 1)
 
+//Import del objeto fountain
+const objLoader = new OBJLoader();
+//cargar el asset
+objloader.load(
+	// resource URL
+	'assets/courtyard/courtyard/Castle Courtyard.obj',
+	// called when resource is loaded
+	function ( object ) {
+
+		scene.add( object );
+
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
 
 //Creación del domo de cielo, para esto creamos una geometría esférica
 // y añadimos nuestra textura de cielo
