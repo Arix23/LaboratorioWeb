@@ -124,6 +124,10 @@
         <div class="d-flex p-2 row align-items-center justify-content-center">
             <input class="form-control" type="text" placeholder="Respuesta" readonly id="submit-input">
             <button type="button" id="submit-button" class="btn btn-dark">Submit</button>
+            
+        </div>
+        <div class="d-flex p-2 row align-items-center justify-content-center">
+            <button type="button" id="reset-button" class="btn btn-dark">Reset Answer</button>
         </div>
     </div>
     <p> Special Thanks to Caroline Gabriel the author of the piano itself: https://codepen.io/gabrielcarol/pen/rGeEbY</p>
@@ -175,6 +179,11 @@
 
 
 	import init, {check} from "./pkg/puzzle_checker.js";
+
+    document.querySelector("#reset-button").addEventListener('click', () => {
+		let input = document.querySelector("#submit-input")
+        input.value = ""
+	})
 
 	document.querySelector("#submit-button").addEventListener('click', () => {
 		let input = document.querySelector("#submit-input")

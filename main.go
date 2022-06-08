@@ -31,6 +31,11 @@ func main() {
 }
 
 func puzzleHandler(w http.ResponseWriter, r *http.Request) {
+
+	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+	w.Header().Set("Pragma", "no-cache")
+	w.Header().Set("Expires", "0")
+
 	var level string
 	for _, c := range r.Cookies() {
 		if c.Name == "page" {
@@ -69,8 +74,16 @@ func puzzleHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func offlineHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+	w.Header().Set("Pragma", "no-cache")
+	w.Header().Set("Expires", "0")
+
 	http.ServeFile(w, r, "pages/offline.html")
 }
 func swHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+	w.Header().Set("Pragma", "no-cache")
+	w.Header().Set("Expires", "0")
+	
 	http.ServeFile(w, r, "static/scripts/SW.js")
 }
